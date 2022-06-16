@@ -7,6 +7,7 @@ GBB.locales = {
 		["GuildChannel"]="Guild Channel",
 				
 		["msgNbRequest"]="%d request(s) - click to whisper - shift+click to 'who' - ctrl+click to 'invite'",
+		["msgRequestHere"] = "Enter here your lfg message.",
 		["msgStartWho"]="request who on %s...",
 		["msgNewRequest"]="New request by %s for dungeon %s.",
 		["msgInit"]="GroupBulletinBoard %s is loaded. Type '/gbb help' to get started.",
@@ -22,6 +23,7 @@ GBB.locales = {
 		["heroicAbr"]="H",
 		["normalAbr"]="N",
 		["raidAbr"]="R",
+		["msgFontSize"] = "Font Size (Requires /reload)",
 		
 		-- option panel
 		
@@ -62,6 +64,7 @@ GBB.locales = {
 		["CboxUseAllInLFG"]="Show all messages from lfg-channel",
 		["CboxEscapeQuit"]="ESC close main window (Restart needed)",
 		["CboxEnableShowOnly"]="Show a fixed number of requests per dungeon",
+		["CboxDisplayLFG"] = "Display LFG Bar (requires /reload)",
 		["CboxChatStyle"]="Use more chat style design",
 		["CboxCharDontFilterOwn"]="Don't filter own request",		 
 		["CboxCharHeroicOnly"]="Heroic only filter",	
@@ -92,7 +95,7 @@ GBB.locales = {
 		["BtnUnselectAll"]="Unselect all",
 		["BtnSelectAll"]="Select all",
 		
-		["BtnWispher"]="Wispher %s",
+		["BtnWhisper"]="Whisper %s",
 		["BtnInvite"]="Invite %s",
 		["BtnWho"]="Who %s",
 		["BtnIgnore"]="Ignore %s",
@@ -107,6 +110,7 @@ GBB.locales = {
 		["BtnNotifyColor"]="Color of the notification message",
 		["BtnPlayerNoteColor"]="Color of the player note",
 		["BtnColorGuild"]="Colour of the guild text",
+		["BtnPostMsg"] = "Post",
 		
 		["SlashReset"]="Reset main window position",
 		["SlashConfig"]="Open configuration",
@@ -145,14 +149,12 @@ GBB.locales = {
 	["BtnNotifyColor"] = "Farbe der Nachricht",
 	["BtnPlayerNoteColor"] = "Farbe der Spielernotizen",
 	["BtnSelectAll"] = "Alles auswählen",
-	["BtnStartShout"] = "Announce",
-	["BtnStopShout"] = "Stop",
-	["BtnStopShoutMsg"] = "Stop automatic announcement",
+	["BtnStopAnnounceMsg"] = "Stop automatic announcement",
 	["BtnTimeColor"] = "Farbe der Zeit",
 	["BtnUnFoldAll"] = "Alle entfalten",
 	["BtnUnselectAll"] = "Alles abwählen",
 	["BtnWho"] = "Who %s",
-	["BtnWispher"] = "%s anflüstern",
+	["BtnWhisper"] = "%s anflüstern",
 	["CboxAdditionalInfo"] = "Mehr Informationen bei /who und wenn jemand online kommt.",
 	["CboxCharDontFilterOwn"] = "Eigene Anfragen nicht filtern",
 	["CboxCharHeroicOnly"]= "Nur heroischer filter",
@@ -166,7 +168,7 @@ GBB.locales = {
 	["CboxDontTrunicate"] = "Nachricht nicht abkürzen",
 	["CboxEnableGroup"] = "Letzte Gruppenmitglieder merken",
 	["CboxEnableGuild"] = "Füge Gilde in Spieler-Tooltip hinzu.",
-	["CboxEnableShoutBox"] = "Enable automatic announcement",
+	["CboxEnableAnnounceBox"] = "Enable automatic announcement",
 	["CboxEnableShowOnly"] = "Zeige eine feste Anzahl von Anfragen pro Instanz",
 	["CboxEscapeQuit"] = "ESC schließt Fenster (Neustart notwendig)",
 	["CboxLockMinimapButton"] = "Minimap-Icon-Position sperren",
@@ -210,7 +212,7 @@ GBB.locales = {
 	["world_channel"] = "Welt",
 	["msgAddNote"] = "Notiz von %s",
 	["msgCustomList"] = "Hier die eigenen eindeutigen Suchbegriffe eingeben. Wenn nichts vorhanden ist, werden die englischen als ausgegraues Beispiel angezeigt.",
-	["msgDoShout"] = "Request announced.",
+	["msgDoAnnounce"] = "Request announced.",
 	["msgInit"] = "GroupBulletinBoard %s geladen. Zum Starten '/gbb help' eingeben.",
 	["msgLastSeen"] = "Zuletzt gesehen:",
 	["msgLastTime"] = "Letztes Update %s",
@@ -220,10 +222,10 @@ GBB.locales = {
 	["msgNbRequest"] = "%d Anfrage(n) - Anklicken zum Flüstern - shift + anklicken für /who ",
 	["msgNewRequest"] = "Neue Anfrage von %s für Instanz %s.",
 	["msgRequestHere"] = "Enter here your lfg message.",
-	["msgShoutError"] = "No request for a dungeon found!",
-	["msgShoutErrorChannel"] = "Channel '%s' not found.",
+	["msgAnnounceError"] = "No request for a dungeon found!",
+	["msgAnnounceErrorChannel"] = "Channel '%s' not found.",
 	["msgStartWho"] = "Sende /who für %s...",
-	["msgStopShout"] = "Automatic announcement stopped.",
+	["msgStopAnnounce"] = "Automatic announcement stopped.",
 	["msgTimeFormat"] = "%dm %02ds",
 	["msgTotalTime"] = "Gesamtzeit %s",
 	["PanelAbout"] = "Über",
@@ -262,16 +264,15 @@ GBB.locales = {
 		["BtnIgnore"]="Игнорировать %s",
 		["BtnNotifyColor"]="Цвет уведомительного сообщения",
 		["BtnSelectAll"]="Выбрать все",
-		["BtnStartShout"]="Объявить",
-		["BtnStopShout"]="Стоп",
-		["BtnStopShoutMsg"]="Остановить автоматическое объявление",
+		["BtnPostMsg"]="Объявить",
+		["BtnStopAnnounceMsg"]="Остановить автоматическое объявление",
 		["BtnTimeColor"]="Цвет времени",
 		["BtnPlayerNoteColor"]="Цвет заметки об игроке",
 		["BtnColorGuild"]="Цвет текста гильдии",
 		["BtnUnFoldAll"]="Развернуть все",
 		["BtnUnselectAll"]="Снять все",
 		["BtnWho"]="Кто %s",
-		["BtnWispher"]="Шепот %s",
+		["BtnWhisper"]="Шепот %s",
 		["CboxCharDontFilterOwn"]="Не фильтровать собственный запрос",
 		["CboxCharHeroicOnly"]="Показывать только героические",
 		["CboxCharNormalOnly"]="Только нормальный фильтр",
@@ -281,7 +282,7 @@ GBB.locales = {
 		["CboxColorOnLevel"]="Подсветить подземелья рекомендуемого диапазона уровней",
 		["CboxCompactStyle"]="Использовать двухстрочный дизайн",
 		["CboxDontTrunicate"]="Не обрезать сообщения",
-		["CboxEnableShoutBox"]="Включить автоматическое объявление",
+		["CboxEnableAnnounceBox"]="Включить автоматическое объявление",
 		["CboxEnableShowOnly"]="Показать фиксированное количество запросов в подземелье",
 		["CboxEscapeQuit"]="Закрывать главное окно при нажатии ESC (требуется перезагрузка)",
 		["CboxLockMinimapButton"]="Блокировка положения кнопки у миникарты",
@@ -328,7 +329,7 @@ GBB.locales = {
 		["lfg_channel"]="ПоискСпутников",
 		["world_channel"]="Мир",
 		["msgCustomList"]="Введите здесь свои уникальные шаблоны для поиска. Если занчение не заполнено, английские шаблоны отображаются в виде примера серым цветом.",
-		["msgDoShout"]="Запрос объявлен.",
+		["msgDoAnnounce"]="Запрос объявлен.",
 		["msgInit"]="GroupBulletinBoard %s загружен. Введите '/gbb help' для получения информации.",
 		["msgLastTime"]="Последнее обновление %s",
 		["msgLevelRange"]="(Уровень %d - %d)",
@@ -337,10 +338,10 @@ GBB.locales = {
 		["msgNbRequest"]="%d запрос(ов) - нажмите, чтобы шепнуть - ШИФТ + ЛКМ для \"/кто\"",
 		["msgNewRequest"]="Новый запрос от %s для подземелья %s.",
 		["msgRequestHere"]="Введите ваше сообщение для поиска.",
-		["msgShoutError"]="Запрос на подземелье не найден!",
-		["msgShoutErrorChannel"]="Канал '%s' не найден.",
+		["msgAnnounceError"]="Запрос на подземелье не найден!",
+		["msgAnnounceErrorChannel"]="Канал '%s' не найден.",
 		["msgStartWho"]="Запросить /кто на %s...",
-		["msgStopShout"]="Автоматическое объявление остановлено.",
+		["msgStopAnnounce"]="Автоматическое объявление остановлено.",
 		["msgTimeFormat"]="%dm %02ds",
 		["msgTotalTime"]="Общее время %s",
 		["PanelAbout"]="Информация",
@@ -357,7 +358,7 @@ GBB.locales = {
 		["lfg_channel"]="尋求組隊", -- must be the default chat-name!
 		["world_channel"]="綜合", -- must be the default chat-name!
 		["GuildChannel"]="公會",
-				
+		
 		["msgNbRequest"]="%d 個尋求組隊 - 左鍵:密語 - shift+左鍵:查詢who - ctrl+左鍵:邀請進組 - 繁中化:帕爾提娜@伊弗斯|n",
 		["msgStartWho"]="查詢 who 於 %s...",
 		["msgNewRequest"]="新的尋求組隊 %s 尋找地城 %s.",
@@ -374,6 +375,8 @@ GBB.locales = {
 		["heroic"]="英雄", 
 		["heroicAbr"]="H",
 		["normalAbr"]="N",
+		["raidAbr"]="R",
+		["msgFontSize"] = "字體大小 (需要 /reload)",
 		
 		-- option panel
 		
@@ -408,18 +411,20 @@ GBB.locales = {
 		["CboxTagsZhtw"]="中文 (台灣)",
 		["CboxTagsCustom"]="自訂",
 		["CboxRemoveRaidSymbols"]="移除團隊圖示 如 {rt1}",
-		["CboxOrderNewTop"]="排序新尋求組隊顯示在上面",
-		["CboxColorByClass"]="根據職業著色名字",
+		["CboxOrderNewTop"]="排序越新的顯示越上面",
+		["CboxColorByClass"]="名字依職業著色",
 		["CboxShowClassIcon"]="並顯示圖示",
-		["CboxUseAllInLFG"]="顯示來自 lfg-channel 的所有訊息",
+		["CboxUseAllInLFG"]="顯示來自組隊頻道的所有訊息",
 		["CboxEscapeQuit"]="ESC 關閉主視窗 (需要重啟)",
 		["CboxEnableShowOnly"]="在每個地城顯示尋求組隊的數量",
+		["CboxDisplayLFG"] = "顯示組隊條 (需要 /reload)",
 		["CboxChatStyle"]="使用聊天樣式設計",
 		["CboxCharDontFilterOwn"]="不要過濾自己的請求",		 
-		["CboxCharHeroicOnly"]="只過濾英雄",	 
-		["CboxDontTrunicate"]="不要截斷訊息",
+		["CboxCharHeroicOnly"]="只顯示英雄",	 
+		["CboxCharNormalOnly"]="只顯示普通",  
+		["CboxDontTrunicate"]="不要斷行訊息",
 		["CboxOneLineNotification"]="小的單行聊天通知",
-		["CboxCompactStyle"]="使用雙行設計",
+		["CboxCompactStyle"]="使用雙行樣式",
 		["CboxEnableGroup"]="記得過去的團隊成員",
 		["CboxEnableGuild"]="新增公會於玩家提示",
 		["CboxCombineSubDungeons"]="合併次副本如 厄運之槌 (僅新尋求組隊生效)",
@@ -440,7 +445,7 @@ GBB.locales = {
 		["BtnUnselectAll"]="取消全選",
 		["BtnSelectAll"]="全選",
 		
-		["BtnWispher"]="密語 %s",
+		["BtnWhisper"]="密語 %s",
 		["BtnInvite"]="邀請 %s",
 		["BtnWho"]="Who %s",
 		["BtnIgnore"]="忽略 %s",
@@ -455,6 +460,7 @@ GBB.locales = {
 		["BtnNotifyColor"]="通知訊息顏色",
 		["BtnPlayerNoteColor"]="玩家註記顏色",
 		["BtnColorGuild"]="公會文字顏色",
+		["BtnPostMsg"] = "發佈",
 		
 		["SlashReset"]="重設主視窗位置",
 		["SlashConfig"]="開啟設定",
@@ -466,13 +472,12 @@ GBB.locales = {
 		["TabGroup"]="成員",
 		
 		["AboutUsage"]="GBB 於背景搜尋尋求組隊的聊天訊息. 欲密語, 單點左鍵即可. 欲查詢 '/who' shift + 左鍵即可. 地城列表可以在設定中被過濾. 你也可以對地城名稱單點左鍵折疊.|n舊的尋求組隊會在150秒後被過濾掉.",
-			
+		
 		["AboutSlashCommand"]="<value> 可以是 true, 1, enable, false, 0, disable. 如 <value> 未提供, 則會改變目前狀態.",
 		
 		
 		["AboutInfo"]="GBB provides an overview of the endless requests in the chat channels. It detects all requests to the classic dungeons, sorts them and presents them clearly way. Numerous filtering options reduce the gigantic number to exactly the dungeons that interest you. And if that's not enough, GBB will let you know about any new request via a sound or chat notification. And finally, GBB can post your request repeatedly.",
-		
-		
+		["AboutCredits"]="Original by GPI / Erytheia-Razorfen",
 	},
 
 }
@@ -482,22 +487,22 @@ GBB.locales.enUS=GBB.locales.enGB
 
 function GBB.LocalizationInit()
 	local locale = GetLocale()
-	local L = GBB.locales[locale] or {}
+	local l = GBB.locales[locale] or {}
 
 	if GroupBulletinBoardDB and GroupBulletinBoardDB.CustomLocales and type(GroupBulletinBoardDB.CustomLocales) == "table" then
 		for key,value in pairs(GroupBulletinBoardDB.CustomLocales) do
 			if value~=nil and value ~="" then
-				L[key.."_org"]=L[key] or GBB.locales.enGB[key]
-				L[key]=value
+				l[key.."_org"]=l[key] or GBB.locales.enGB[key]
+				l[key]=value
 			end
 		end
 	end
 	
 	-- Needed to not cause overflow when using english
 	if (locale ~= "enGB" and locale ~= "enUS") then
-		setmetatable(L, {__index = function (t, k)  
-			if GBB.L and GBB.L[k] then 
-				return GBB.L[k]
+		setmetatable(l, {__index = function (t, k)  
+			if GBB.l and GBB.l[k] then 
+				return GBB.l[k]
 			elseif GBB.locales.enGB and GBB.locales.enGB[k] then
 				return GBB.locales.enGB[k]
 			else
@@ -505,5 +510,5 @@ function GBB.LocalizationInit()
 			end	
 		end})
 	end
-	return L
+	return l
 end

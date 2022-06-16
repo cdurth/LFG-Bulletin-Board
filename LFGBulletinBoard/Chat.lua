@@ -65,7 +65,7 @@ function GBB.InsertChat()
 		return
 	end
 
-	local ChannelsToAdd = { [L["lfg_channel"]] = 1, [L["world_channel"]] = 1, }
+	local ChannelsToAdd = { [GBB.L["lfg_channel"]] = 1, [GBB.L["world_channel"]] = 1, }
 
 	-- Create new chat frame and new tab with no default message groups
 
@@ -98,4 +98,71 @@ function GBB.InsertChat()
 	FCF_SelectDockFrame(ChatFrame1)
     GBB.DB["NotifyChat"]=true
     GBB.OptionsUpdate()
+end
+
+function GBB.SendMessage(ChannelName, Msg)
+	local index = GetChannelName(ChannelName) -- It finds General is a channel at index 1
+	if (index~=nil) then 
+  		SendChatMessage(Msg , "CHANNEL", nil, index); 
+	end
+end
+
+function GBB.AnnounceInit()
+	GroupBulletinBoardFrameSelectChannel:SetNormalFontObject(GBB.DB.FontSize)
+	GroupBulletinBoardFrameAnnounce:SetNormalFontObject(GBB.DB.FontSize)
+	GroupBulletinBoardFrameAnnounceMsg:SetTextColor(0.6,0.6,0.6)
+	GroupBulletinBoardFrameAnnounceMsg:SetText(GBB.L["msgRequestHere"])
+	GroupBulletinBoardFrameAnnounce:SetText(GBB.L["BtnPostMsg"])
+	GroupBulletinBoardFrameAnnounceMsg:HighlightText(0,0) 
+	GroupBulletinBoardFrameAnnounceMsg:SetCursorPosition(0)
+	GroupBulletinBoardFrameAnnounce:Disable()
+
+end
+
+function GBB.GetFocus()
+	local t= GroupBulletinBoardFrameAnnounceMsg:GetText()
+	if t==GBB.L["msgRequestHere"]  then
+		GroupBulletinBoardFrameAnnounceMsg:SetTextColor(1,1,1)
+		GroupBulletinBoardFrameAnnounceMsg:SetText("")
+		
+	end
+end
+
+function GBB.EditAnnounceMessage_Changed()
+	local t= GroupBulletinBoardFrameAnnounceMsg:GetText()
+	if t==nil or t=="" or t==GBB.L["msgRequestHere"] then
+		GroupBulletinBoardFrameAnnounce:Disable()
+	else
+		GroupBulletinBoardFrameAnnounce:Enable()
+	end	
+end
+
+function GBB.Announce()
+	local msg = GroupBulletinBoardFrameAnnounceMsg:GetText()
+	
+	if msg~= nil and msg~="" and msg~=GBB.L["msgRequestHere"]then
+		GBB.SendMessage(GBB.DB.AnnounceChannel, msg)
+		GroupBulletinBoardFrameAnnounceMsg:ClearFocus()
+	end
+end
+
+function GBB.CreateChannelPulldown (frame, level, menuList)
+	if level~=1 then return end
+	local t= GBB.PhraseChannelList(GetChannelList())
+	
+	local info = UIDropDownMenu_CreateInfo()
+ 
+	
+	for i,channel in pairs(t) do
+		info.text =  i..". "..channel.name
+		info.checked = (channel.name == GBB.DB.AnnounceChannel)
+		info.disabled = channel.hidden
+		info.arg1 = i
+		info.arg2 = channel.name
+		info.func = function(self, arg1, arg2, checked)
+				GBB.DB.AnnounceChannel=arg2
+				GroupBulletinBoardFrameSelectChannel:SetText(arg2)
+			end
+		UIDropDownMenu_AddButton(info)
+	end
 end
